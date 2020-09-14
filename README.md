@@ -123,3 +123,12 @@ when I visit a trail's page,
 I see the total number of hiking trips where this trail
 was included
 ```
+User Story 11
+
+As a Visitor
+when i visit a trips show page,
+i see a link next to each trail
+and when i click this link
+it removes the trail from the trip
+i am redirected to the trips show page
+and i no longer see that trail.

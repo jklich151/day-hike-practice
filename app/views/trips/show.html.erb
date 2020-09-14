@@ -1,0 +1,26 @@
+<%= @trip.name %>
+
+<% @trip.trails.each do |trail| %>
+  <%= link_to trail.name, "/trails/#{trail.id}" %>
+    <section id="trail-<%="#{trail.id}"%>">
+      <%= link_to "Delete Trail", "/trail_trips/#{@trip.id}/#{trail.id}", method: :delete %>
+    </section>
+
+  <%= trail.length %>
+  <%= trail.address %>
+<% end %>
+
+Total Distance:<%= @trip.total_distance %>
+Average Distance: <%= @trip.average_distance %>
+
+<section id="longest-<%="#{@trip.id}"%>">
+  <h3> Longest Trail on Trip </h3>
+  <%= @trip.longest_trail&.name %>
+  <%= @trip.longest_trail&.length %>
+</section>
+
+<section id="shortest-<%="#{@trip.id}"%>">
+  <h3> Shortest Trail on Trip </h3>
+  <%= @trip.shortest_trail&.name %>
+  <%= @trip.shortest_trail&.length %>
+</section>

@@ -1,0 +1,6 @@
+<h1> All Trips </h1>
+<% @trips.each do |trip| %>
+  <section id="index-<%="#{trip.id}"%>">
+  <%= link_to trip.name, "/trips/#{trip.id}" %>
+  </section>
+<% end %>
